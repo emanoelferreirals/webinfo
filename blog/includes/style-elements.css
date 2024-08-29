@@ -1,0 +1,10 @@
+@charset "UTf-8";
+
+.video, video{
+    width: 100%;
+    display: block;
+    margin: auto;
+}
+
+
+
