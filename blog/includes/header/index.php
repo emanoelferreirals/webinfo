@@ -3,7 +3,7 @@
 
 <?php
    //definindo Raiz do projeto(parametro para links)
-   define('RAIZ_BLOG','http://localhost/');
+   define('RAIZ_BLOG','http://localhost/webinfo/blog/');
 ?>
 
 <header>
