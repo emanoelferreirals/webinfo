@@ -2,7 +2,8 @@
 <!--Iportar 'header.css' em assets/css-->
 
 <?php
-   
+   //definindo Raiz do projeto(parametro para links)
+   define('RAIZ_BLOG','http://localhost/');
 ?>
 
 <header>
@@ -18,28 +19,28 @@
 <div class="options-menu-open">
     <?php 
         if(isset($_SESSION['login-admin']) && $_SESSION['login-admin'] === true){ ?>
-            <a href="../adm/editor-admin.php" class="option">
+            <a href="<?=RAIZ_BLOG?>adm/editor-admin.php" class="option">
                 Painel Administrador
                 
             </a>
     <?php } else if(isset($_SESSION['login']) && $_SESSION['login'] === true){  ?>
-            <a href="../account" class="option">
+            <a href="<?=RAIZ_BLOG?>/account" class="option">
                 Minha Conta
                 
             </a>
     <?php } else { ?>
-            <a href="../login" class="option">
+            <a href="<?=RAIZ_BLOG?>login" class="option">
                 Login | Cadastrar-se
             </a>
     <?php } ?>
 
-    <a href="blog" class="option">Home</a>
-    <a href="admin" class="option">Admin</a>
-    <a href="conta" class="option">Conta</a>
-    <a href="newslater" class="option">Newslater</a>
-    <a href="publi" class="option">Publi</a>
-    <a href="search" class="option">Search</a>
-    <a href="sobre" class="option">Sobre</a>
+    <a href="<?=RAIZ_BLOG?>" class="option">Home</a>
+    <a href="<?=RAIZ_BLOG?>admin" class="option">Admin</a>
+    <a href="<?=RAIZ_BLOG?>conta" class="option">Conta</a>
+    <a href="<?=RAIZ_BLOG?>newslater" class="option">Newslater</a>
+    <a href="<?=RAIZ_BLOG?>publi" class="option">Publi</a>
+    <a href="<?=RAIZ_BLOG?>search" class="option">Search</a>
+    <a href="<?=RAIZ_BLOG?>sobre" class="option">Sobre</a>
 
     <div class="option" id="toggle-theme">
         <div class="theme-switcher-area">

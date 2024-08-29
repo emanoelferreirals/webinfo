@@ -2,6 +2,9 @@
     require_once('conexao_bd.php');
     session_start();
 
+    //definindo Raiz do projeto(parametro para links)
+    define('RAIZ','http://localhost/');
+
     if(isset($_POST['operacao']) && !empty($_POST['operacao'])){
         $oper = $_POST['operacao'];
 

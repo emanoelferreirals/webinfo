@@ -1,5 +1,5 @@
 <?php
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +33,7 @@
                 $dados = array(
                     'operacao' => 'carregar-posts',
                     'page' => 0,
-                    'max_com'=>2
+                    'max_com'=>3
                 );
 
                 if(!isset($_GET['list']) || empty($_GET['list']) || $_GET['list'] < 1){
@@ -65,14 +65,35 @@
                         var_dump($resposta_obj);
                     echo "</pre>";*/  
                     
-                    //
+                    // Total de postas para determinar o número da lista
                     $total_posts = $resposta_obj->total_posts;
+
+                    //Calculo do número inicial da listagem da página
+                    $ind_list = $total_posts - ($dados['page'] - 1) * $dados['max_com'];
 
                     if($resposta_obj->sucess){
                         foreach($resposta_obj->dados as $item){ ?>
-                            <a href='publi/?id=<?=$item->id?>'><?=$item->titulo?></a><br>
+                            <div class="post">
+                                <p>
+                                    <?=$ind_list?>.
+                                    <a href='publi/?id=<?=$item->id?>'>
+                                        <?=$item->titulo?>
+                                    </a>
+                                </p>
+                                <p>
+                                    <?=$item->descricao?>
+                                </p>
+                                <div class="opcoes">
+                                    <p class="data">
+                                        Publicado em <?=$item->data_publi?>  
+                                    </p>
+                                </div>
+                            </div>
+                            <br>                            
 
-                    <?php } ?>
+                        <?php $ind_list--; 
+                
+                        } ?><!--Fechamento do foreach-->
 
                             <div id='pagination'> 
                                 <?php 
