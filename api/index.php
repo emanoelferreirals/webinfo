@@ -14,7 +14,7 @@
 
 
     <link rel="stylesheet" href="assets/css/home.css">
-    <link rel="stylesheet" href="includes/header/header.css">
+    <link rel="stylesheet" href="includes/header/header-style.css">
 
     <script src="includes/header/header.js" defer></script>
 </head>
